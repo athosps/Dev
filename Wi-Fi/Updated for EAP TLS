@@ -4,7 +4,13 @@
  Overview:
  1:14 Create Certificate Template for Client and Server Authentication
 
-Default selected certificate should work. However you may need to set it manually. This can be done by going to "Tools" - "Network Policy Server" - "Policies" - "Network Policies". I called my Network Policy "EAP-TLS". Double click your policy to open it. In the "Constraints Tab" select "Authentication Methods". Under "EAP Types" select "Microsoft: Smart Card or other certificate" and click "EDIT". Select the certificate matching the "Expiration Date" value of your RADIUS Server certificate to ensure you RADIUS Server can successfully authenticate to the clients. 
+Default selected certificate should work. However you may need to set it manually.
+ This can be done by going to "Tools" - "Network Policy Server" - "Policies" - "Network Policies".
+  I called my Network Policy "EAP-TLS". Double click your policy to open it. In the 
+  "Constraints Tab" select "Authentication Methods". Under "EAP Types" select "Microsoft:
+   Smart Card or other certificate" and click "EDIT". Select the certificate matching the 
+   "Expiration Date" value of your RADIUS Server certificate to ensure you RADIUS Server 
+   can successfully authenticate to the clients. 
 
 2:31 Define Cert Template Property Values
 4:57 Import Certificate Template to Issue
