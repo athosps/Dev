@@ -1,0 +1,15 @@
+# Set the execution policy if you have not done so before on your machine # 
+
+Set-ExecutionPolicy RemoteSigned 
+
+# Open powershell "as different user" and enter credentials. Then, enter the following commands one by one. # 
+
+import-module ActiveDirectory  
+
+$LiveCred = Get-Credential 
+  
+$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri http://localexchange/powershell/ -Credential $LiveCred -Authentication Kerberos 
+
+Import-PSSession $Session 
+
+Get-ADUser -SearchBase "OU=Leavers,OU=Staff,OU=Users,DC=School,DC=Org" -Filter * | Set-ADUser -Replace @{msExchHideFromAddressLists=$true} 
