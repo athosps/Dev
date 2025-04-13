@@ -1,0 +1,51 @@
+Using MDT with Windows Autopilot for Existing Devices  
+
+From <https://www.deploymentresearch.com/using-mdt-with-windows-autopilot-for-existing-devices-task-sequence-template-and-scripts/>  
+
+ On the link below you can download a new task sequence template for Windows Autopilot as well as the needed scripts and unattend.xml file: 
+
+Download link:  https://github.com/DeploymentResearch/DRFiles/tree/master/Scripts/AutoPilot/MDT 
+
+Note #1: The Windows Autopilot for Existing Devices scenario requires that you download your Autopilot deployment profile as a JSON file. If you need a guide for downloading the profile, check this post: Windows Autopilot for Existing Devices – Downloading the Deployment Profile 
+
+Note #2: Ensure that your Windows Autopilot deployment profile is configured for either user-driven Microsoft Entra ID or user-driven hybrid Microsoft Entra Autopilot profiles. These are the only supported scenarios. For example, Self-deploying or pre-provisioning Autopilot profiles are not supported for this scenario. 
+
+The Task Sequence template and scripts: 
+
+ 
+
+Download the files in from this GitHub repository, as well as your Windows Autopilot profile (AutopilotConfigurationFile.json). Then copy the files to the right locations: 
+
+1. Copy the downloaded AutopilotConfigurationFile.json to the <deployment share>\Autopilot folder (create the folder if needed). 
+
+AutopilotConfigurationFile.json file copied to the <deployment share>\Autopilot folder. 
+
+2. Copy the CleanupForAutopilot.ps1 script to the <deployment share>\scripts folder. 
+
+The CleanupForAutopilot.ps1 script copied to the to the <deployment share>\scripts folder. 
+
+3. Copy the WindowsAutoPilotForExistingDevices.xml template to the <deployment share>\Templates folder. 
+
+The WindowsAutoPilotForExistingDevices.xml template copied to the <deployment share>\Templates folder. 
+
+Using the new Task Sequence template 
+
+To use the new task sequence template, select the Windows Autopilot for Existing Devices template when creating a new task sequence. 
+
+Selecting the Windows Autopilot for Existing Devices template when creating a new task sequence. 
+
+1. After you created a new task sequence using the Windows Autopilot for Existing Devices template, make a note of the task sequence id, and copy the unattend.xml from the GitHub repository to the <deployment share>\control\<task sequence id> folder. 
+
+The unattend.xml template copied to the <deployment share>\control\<task sequence id> folder. 
+
+Reviewing the Task Sequence. 
+
+This is what the new task sequence should like when created using the Windows Autopilot for Existing Devices template. 
+
+The task sequence created from the Windows Autopilot for Existing Devices template. 
+
+ 
+
+From <https://www.deploymentresearch.com/using-mdt-with-windows-autopilot-for-existing-devices-task-sequence-template-and-scripts/>  
+
+ 

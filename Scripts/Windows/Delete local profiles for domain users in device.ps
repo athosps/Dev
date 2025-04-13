@@ -1,0 +1,37 @@
+# Set the list of profiles to exclude 
+
+$ExcludeProfiles = @("Administrator", "Default", "Public") 
+
+ 
+# Get all user profiles on the system 
+
+$Profiles = Get-WmiObject -Class Win32_UserProfile | Where-Object { 
+
+    -not $_.Special -and $_.LocalPath -notlike "*\ServiceAccount*" -and $_.LocalPath -notlike "*\NetworkService*" 
+
+} 
+
+foreach ($Profile in $Profiles) { 
+
+    $ProfileName = Split-Path $Profile.LocalPath -Leaf 
+
+    if ($ExcludeProfiles -notcontains $ProfileName) { 
+
+        try { 
+
+            Write-Host "Deleting profile: $ProfileName" -ForegroundColor Yellow 
+
+            $Profile.Delete() 
+
+        } catch { 
+
+            Write-Host "Failed to delete profile: $ProfileName. Error: $_" -ForegroundColor Red 
+
+        } 
+
+    } else { 
+
+        Write-Host "Skipping profile: $ProfileName" -ForegroundColor Green 
+
+    } 
+} 

@@ -1,0 +1,25 @@
+Vanity - Company Branding 
+Step 1. Configure the Company Portal | Microsoft Learn 
+
+Azure: 
+
+Add company branding to your organization's sign-in page - Microsoft Entra | Microsoft Learn 
+
+The guide that was followed to implement the missing steps for the Hybrid joined. 
+
+Current issue: 
+
+Hybrid only accepts Prefix for the device and adds random characters. 
+The renaming currently is not allowed from Intune, as the device needs to have the write permission. 
+  
+<<Microsoft Intune Autopilot Hybrid Entra ID.docx>>
+
+ 
+For a task sequence bundle like experience we can use the: 
+
+Enrollment Status Page 
+
+From <https://intune.microsoft.com/#view/Microsoft_Intune_Enrollment/EnrollmentStatusPageProfileList.ReactView>  
+
+ 
+Where we can create similar bundle workflows, dictate apps and the policies to be applied.

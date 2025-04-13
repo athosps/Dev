@@ -1,0 +1,26 @@
+ Used the YouTube guide, Securing RADIUS with EAP-TLS [Windows Server 2019]:
+ https://www.youtube.com/watch?v=SgAjEuCAFzE
+
+ Overview:
+ 1:14 Create Certificate Template for Client and Server Authentication
+
+Default selected certificate should work. However you may need to set it manually. This can be done by going to "Tools" - "Network Policy Server" - "Policies" - "Network Policies". I called my Network Policy "EAP-TLS". Double click your policy to open it. In the "Constraints Tab" select "Authentication Methods". Under "EAP Types" select "Microsoft: Smart Card or other certificate" and click "EDIT". Select the certificate matching the "Expiration Date" value of your RADIUS Server certificate to ensure you RADIUS Server can successfully authenticate to the clients. 
+
+2:31 Define Cert Template Property Values
+4:57 Import Certificate Template to Issue
+5:29 Force AD Replication
+6:31 Install Network Policy Service (NPS) Role on a Domain Controller (Best Practice)
+7:11 Register NPS Server in AD to add it to RAS and IAS Group
+8:08 Configure RADIUS Clients
+11:25 Create Shared Secret Template
+12:33 Configure RADIUS Server Group
+17:55 Configure Connection Request Policy
+21:26 Configure Network Policies
+23:38 RADIUS Standard Attribute Values
+26:33 Policy Processing Order
+27:06 Configure Accounting
+28:17 Configure Group Policy for Certificates
+31:52 Configure Group Policy Wireless Profile
+37:22 Older Windows OS Possible Issues
+38:35 Network Policy Server Service Name
+39:02 Thanks for watching!

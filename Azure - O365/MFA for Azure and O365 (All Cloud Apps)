@@ -1,0 +1,29 @@
+Create or clone a policy: 
+
+
+Multifactor authentication for Groups 
+
+Target: 
+ 
+MFA Enabled (manual group test members)  
+
+From <https://entra.microsoft.com/#view/Microsoft_AAD_ConditionalAccess/PolicyBlade/policyId>  
+
+ Target resources: 
+
+All cloud apps 
+
+Control user access based on their network or physical location 
+
+Including 
+
+Any network or location 
+
+
+Excluding: 
+
+Site 
+
+Access  
+
+Require multifactor authentication 
